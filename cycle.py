@@ -18,7 +18,7 @@ def cycle(g, x):
         c.append(y)
         g[y].remove(x)
         x = y
-    return c[c.index(x):len(c) - 1]
+    return c[:len(c) - 1]
 
 
 def cycles_egaux(c1,c2):
@@ -48,5 +48,4 @@ def euler(graph):
             if sommet_a_des_voisins(s, g):
                 c2 = cycle(g, s)
                 c = c[:i] + c2 + c[i:]
-    print(c)
     return c
